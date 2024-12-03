@@ -5,21 +5,30 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Tienda IT - Inicio</title>
     <link rel="stylesheet" href="css/estilo.css">
+    
 </head>
 <body>
     <header>
+       
         <div class="logo-container">
-           TIENDA IT🖥️
+            TIENDA IT🖥️
         </div>
         <nav>
-            <ul>
-                <li><a href="index.html">Inicio</a></li>
-                <li><a href="producto.html">Productos</a></li>
-                <li><a href="contacto.html">Contacto</a></li>
-                <li><a href="mapa.html">Mapa</a></li>
-                <li><a href="Video.html">Video</a></li>
-
+            <ul id="menu">
+              <li><a href="index.html">Inicio</a></li>
+              <li><a href="producto.html">Productos</a></li>
+              <li><a href="contacto.html">Contacto</a></li>
+              <li><a href="mapa.html">Mapa</a></li>
+              <li><a href="Video.html">Video</a></li>
             </ul>
+            <!-- Botón de menú para dispositivos móviles -->
+            <div class="menu-toggle" id="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+
+            
         </nav>
     </header>
 
@@ -35,10 +44,6 @@
         
     </main>
 
-    <footer>
-        <p>&copy; 2024 Tienda IT. Todos los derechos reservados.</p>
-    </footer>
-
-    <script src="js/script.js"></script>
+    <script src="index.js"></script>
 </body>
 </html>

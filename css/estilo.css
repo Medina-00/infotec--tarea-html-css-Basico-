@@ -9,6 +9,7 @@
 body {
     background-color: #f4f4f4;
     line-height: 1.6;
+    position: relative; /* Para evitar que el contenido se desplace por debajo del menú */
 }
 
 /* Estilos para el header */
@@ -46,15 +47,57 @@ nav ul li a:hover {
     color: #007bff;
 }
 
-/* Estilos para el footer */
-footer {
-    background-color: #333;
-    color: white;
-    text-align: center;
-    padding: 10px 0;
-    position: fixed;
-    width: 100%;
-    bottom: 0;
+/* Estilos del menú de navegación para dispositivos móviles */
+nav {
+    position: relative;
+}
+
+.menu-toggle {
+    display: none;
+    cursor: pointer;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.menu-toggle span {
+    width: 25px;
+    height: 3px;
+    background-color: white;
+}
+
+#menu {
+    display: flex;
+    gap: 40px;
+}
+
+/* Mostrar el menú de navegación en pantallas pequeñas */
+@media (max-width: 768px) {
+    #menu {
+        display: none; /* Ocultamos el menú por defecto */
+        flex-direction: column;
+        position: fixed;
+        top: 0; /* Ajustamos para que el menú se vea desde arriba */
+        left: 0;
+        width: 100%; /* El menú ocupará el ancho completo */
+        height: 100%; /* El menú ocupará toda la altura */
+        background-color: rgba(51, 51, 51, 0.95); /* Fondo semi-transparente */
+        padding-top: 60px; /* Para que no se superponga al logo */
+        z-index: 9999;
+        justify-content: center; /* Centra los elementos verticalmente */
+    }
+
+    .menu-toggle {
+        display: flex; /* Mostramos el botón de menú */
+    }
+
+    #menu.show {
+        display: flex; /* Mostramos el menú cuando se añade la clase "show" */
+    }
+
+    #menu li {
+        padding: 15px;
+        text-align: center;
+    }
 }
 
 /* Estilos para la sección de bienvenida con fondo */
@@ -246,14 +289,13 @@ footer {
     display: flex;
     justify-content: center;  /* Centra el video horizontalmente */
     margin: 20px 0;
-  }
+}
   
-  #video h1 {
+#video h1 {
     text-align: center;
     margin-bottom: 20px;
     font-size: 1.2em;
-  }
-  
+}
 
 /* Responsive para dispositivos pequeños */
 @media (max-width: 768px) {
