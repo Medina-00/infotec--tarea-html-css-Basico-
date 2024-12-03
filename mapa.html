@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Mapa con OpenStreetMap</title>
+ <link rel="stylesheet" href="css/estilo.css">
+  <style>
+    
+  </style>
+  <link rel="stylesheet" href="https://unpkg.com/leaflet/dist/leaflet.css" />
+  <script src="https://unpkg.com/leaflet/dist/leaflet.js"></script>
+</head>
+<body class="bodymapa">
+    <header>
+        <div class="logo-container">
+           TIENDA IT🖥️
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Inicio</a></li>
+                <li><a href="producto.html">Productos</a></li>
+                <li><a href="contacto.html">Contacto</a></li>
+                <li><a href="mapa.html">Mapa</a></li>
+                <li><a href="Video.html">Video</a></li>
+
+            </ul>
+        </nav>
+    </header>
+  <!-- Título -->
+  <section id="mapa">
+    <h1>Ubicación de Nuestra Tienda Fisica 📍</h1>
+    <div id="map"></div>
+  </section>
+
+
+  <footer>
+    <p>&copy; 2024 Tienda IT. Todos los derechos reservados.</p>
+    </footer>
+  <script>
+    var map = L.map('map').setView([51.505, -0.09], 13); // Coordenadas de ejemplo (Londres)
+    
+    // Cargar los datos de OpenStreetMap
+    L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+      attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
+    }).addTo(map);
+    
+    // Añadir un marcador en la ubicación
+    var marker = L.marker([18.50571, -69.8568079]).addTo(map); // Puedes cambiar estas coordenadas
+    marker.bindPopup("<b>Nuestra Ubicaccion</b><br>MegaCentro").openPopup();
+  </script>
+
+</body>
+</html>
